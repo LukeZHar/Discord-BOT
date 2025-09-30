@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, MessageFlags } = require('discord.js');
 
 module.exports = {
 	cooldown: 5,
@@ -6,6 +6,6 @@ module.exports = {
 		.setName('ping')
 		.setDescription('Replies with What you want!!'),
 	async execute(interaction) {
-		await interaction.reply('What you want!!');
+		await interaction.reply({ content: 'What you want!', flags: MessageFlags.Ephemeral });
 	},
 };
